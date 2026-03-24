@@ -25,7 +25,16 @@ addLayer("p", {
     hotkeys: [
         {key: "p", description: "P:Prestige for Lesser Thing. I know it's p but still", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-     upgrades: {
+milestones: {
+1: {
+        requirementDescription: "Get a total of 10 lesser thing",
+        effectDescription: "x1.01 nothing",
+        done() { return player.w.points.gte(123) }
+   
+    }
+    
+},
+    upgrades: {
  11: {
     title: "First Upgrade!",
     description: "Triple your nothing gain. Many other upgrades in part 1 will be very generic. I am very new to js as of 3/24/2026 and while making this upgrade. I'll try to update this game more. I promise the other upgrades won't have so much text. I'm truly sorry you might have read this all. ",
@@ -59,6 +68,42 @@ addLayer("p", {
         return player.points.add(1).pow(0.25)
     },
 },
-    layerShown(){return true}
-     },
-})
+    
+15:{
+    title: "Generic Upgrade 1:Small boost",
+    description: "Triple your nothing gain. I got a little stuck on milestone so I decided to do upgrades first. Generic upgrades will be less common later on but expect more coming quickly.",
+    cost: new Decimal(1000),
+        },       
+
+    
+
+
+layerShown(){return true}
+     
+
+
+
+
+
+
+
+
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    })
