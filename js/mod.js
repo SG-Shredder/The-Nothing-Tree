@@ -21,7 +21,7 @@ let changelog = `<h1>Changelog:</h1><br>
 		- Created game.<br>
 		- Special Features:0. `
 
-let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
+let winText = `Congratulations! You have reached the end and beaten this game, but for now... make sure to check out "The Generic Tree" as this was heavily inspired by it.`
 
 // If you add new functions anywhere inside of a layer, and those functions have an effect when called, add them here.
 // (The ones here are examples, all official functions are already taken care of)
@@ -42,10 +42,19 @@ function getPointGen() {
 		return new Decimal(0)
 
 	let gain = new Decimal(1) //upgrades here
-	
-	return gain // not past here
-}
+	if (hasUpgrade('p', 11)) gain = gain.times(3)
+    if (hasUpgrade('p', 12)) gain = gain.times(upgradeEffect('p', 12))	
+    if (hasUpgrade('p', 13)) gain = gain.times(upgradeEffect('p', 13))			
+    
+    return gain 		
+		 
+    
+		
+    
+	}
 
+
+   
 // You can add non-layer related variables that should to into "player" and be saved here, along with default values
 function addedPlayerData() { return {
 }}
