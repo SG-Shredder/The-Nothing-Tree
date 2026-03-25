@@ -16,8 +16,8 @@ addLayer("p", {
     gainMult() { // Calculate the multiplier for main currency from bonuses
       let mult = new Decimal(1) // prestige currency or lesser things here!
   if (hasUpgrade('p', 13)) mult = mult.times(upgradeEffect('p', 13))       
-   if (hasUpgrade('p', 19)) mult = mult.times(upgradeEffect('p', 13))    
-    
+   if (hasUpgrade('p', 19)) mult = mult.times(upgradeEffect('p', 19))    
+   if (hasUpgrade('p', 20)) mult = mult.times(upgradeEffect('p', 20))  
     return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -90,13 +90,22 @@ addLayer("p", {
     description: "I got a little stuck on milestone so I decided to do upgrades first. Generic upgrades will not be very common after this.",
     cost: new Decimal(1500000),
  effect() {
-        return player[this.layer].points.add(1).pow(.3)
+        return player[this.layer].points.add(1).pow(.2)
     },
     effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" },
 },     
+21:{
+    title: "Generic based on boost 2",
+    description: "SUUUUUUUUUUUUUUUUPER BOOOOOOOOOOOOOOOOOOOST.",
+    cost: new Decimal(2e18),
+effect() {
+        return player[this.layer].points.add(1).pow(.5)
+    },
+    effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" },
 
 
 
+},
 
 layerShown(){return true}
      
