@@ -17,7 +17,7 @@ addLayer("p", {
       let mult = new Decimal(1) // prestige currency or lesser things here!
   if (hasUpgrade('p', 13)) mult = mult.times(upgradeEffect('p', 13))       
    if (hasUpgrade('p', 19)) mult = mult.times(upgradeEffect('p', 19))    
-   if (hasUpgrade('p', 20)) mult = mult.times(upgradeEffect('p', 20))  
+   if (hasUpgrade('p', 21)) mult = mult.times(upgradeEffect('p', 21))  
     return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
@@ -119,11 +119,52 @@ effect() {
 
 
 },
+   23:{
+    title: "Linear Boost Time",
+    description: "So why???????",
+    cost: new Decimal("1e25000000"),
+  },
+
+  24:{
+title:" Why did I inflate it so much and it's still layer one?",
+description:" I dunno either man!",
+cost: new Decimal("1e2e9")
+  },
+
+
+25: {
+    title: "Lesser thing boost again",
+    description: "Y?",
+    cost: new Decimal("1e2e17"),
+    effect() {
+        return player.points.add(1).pow(0.75)
+    },
+},
+
+26:{
+    title: " Boost Time",
+    description: "You may be wondering where milestones, buyables are. Remember bee tree? Yeah this is kinda gonna be like that maybe.",
+    cost: new Decimal("1e2e160"),
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 layerShown(){return true}
      
 
-
+    
 
 
 
