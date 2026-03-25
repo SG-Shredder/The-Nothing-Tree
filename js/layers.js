@@ -38,7 +38,7 @@ addLayer("p", {
   12: {
     title: "Second Upgrade!",
     description: " Of course, we will boost nothing based on lesser thing. How can you make nothing with lesser thing? Couldn't tell you.",
-    cost: new Decimal(10),
+    cost: new Decimal(5),
         effect() {
         return player[this.layer].points.add(1).pow(.8)
     },
@@ -47,10 +47,10 @@ addLayer("p", {
     
  13: {
     title: "Second Upgrade!",
-    description: " Of course, we will boost nothing based on lesser thing. How can you make nothing with lesser thing? Couldn't tell you. Wait a minute this is the same as last upgrade just worse.",
-    cost: new Decimal(100),
+    description: " Of course, we will boost lesser thing.",
+    cost: new Decimal(20),
         effect() {
-        return player[this.layer].points.add(1).pow(.1)
+        return player[this.layer].points.add(1).pow(.2)
     },
     effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
         },      
@@ -58,16 +58,16 @@ addLayer("p", {
 14: {
     title: "Lesser thing boost",
     description: "y?",
-    cost: new Decimal(500),
+    cost: new Decimal(200),
     effect() {
-        return player.points.add(1).pow(0.25)
+        return player.points.add(1).pow(0.45)
     },
 },
     
 15:{
     title: "Generic Upgrade 1:Small boost",
     description: "Triple your nothing gain. I got a little stuck on milestone so I decided to do upgrades first. Generic upgrades will be less common later on but expect more coming quickly.",
-    cost: new Decimal(1000),
+    cost: new Decimal(800),
         },       
 
 16:{
@@ -77,17 +77,17 @@ addLayer("p", {
         },     
 17:{
     title: "Generic Upgrade 3:Small boost",
-    description: "Double nothing gain. I got a little stuck on milestone so I decided to do upgrades first. Generic upgrades will be less common later on but expect more",
+    description: "2.5x nothing gain. I got a little stuck on milestone so I decided to do upgrades first. Generic upgrades will be less common later on but expect more",
     cost: new Decimal(10000),
         },     
 18:{
     title: "Generic Upgrade 4:BIIIIIIG BOOST",
-    description: "Double nothing gain. I got a little stuck on milestone so I decided to do upgrades first. Generic upgrades will be less common later on but expect more",
+    description: "15x nothing gain. I got a little stuck on milestone so I decided to do upgrades first. Generic upgrades will be less common later on but expect more",
     cost: new Decimal(50000),
         },     
 19:{
     title: "Generic based on boost 1",
-    description: "Double nothing gain. I got a little stuck on milestone so I decided to do upgrades first. Generic upgrades will not be very common after this.",
+    description: "I got a little stuck on milestone so I decided to do upgrades first. Generic upgrades will not be very common after this.",
     cost: new Decimal(15000000),
  effect() {
         return player[this.layer].points.add(1).pow(.3)
