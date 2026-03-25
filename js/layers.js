@@ -16,7 +16,9 @@ addLayer("p", {
     gainMult() { // Calculate the multiplier for main currency from bonuses
       let mult = new Decimal(1) // prestige currency or lesser things here!
   if (hasUpgrade('p', 13)) mult = mult.times(upgradeEffect('p', 13))       
-        return mult
+   if (hasUpgrade('p', 19)) mult = mult.times(upgradeEffect('p', 13))    
+    
+    return mult
     },
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
@@ -25,15 +27,8 @@ addLayer("p", {
     hotkeys: [
         {key: "p", description: "P:Prestige for Lesser Thing. I know it's p but still", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-milestones: {
-1: {
-        requirementDescription: "Get a total of 10 lesser thing",
-        effectDescription: "x1.01 nothing",
-        done() { return player.w.points.gte(123) }
-   
-    }
-    
-},
+
+
     upgrades: {
  11: {
     title: "First Upgrade!",
@@ -75,7 +70,32 @@ milestones: {
     cost: new Decimal(1000),
         },       
 
-    
+16:{
+    title: "Generic Upgrade 2:Tiny boost",
+    description: "Double nothing gain. I got a little stuck on milestone so I decided to do upgrades first. Generic upgrades will be less common later on but expect more",
+    cost: new Decimal(3000),
+        },     
+17:{
+    title: "Generic Upgrade 3:Small boost",
+    description: "Double nothing gain. I got a little stuck on milestone so I decided to do upgrades first. Generic upgrades will be less common later on but expect more",
+    cost: new Decimal(10000),
+        },     
+18:{
+    title: "Generic Upgrade 4:BIIIIIIG BOOST",
+    description: "Double nothing gain. I got a little stuck on milestone so I decided to do upgrades first. Generic upgrades will be less common later on but expect more",
+    cost: new Decimal(50000),
+        },     
+19:{
+    title: "Generic based on boost 1",
+    description: "Double nothing gain. I got a little stuck on milestone so I decided to do upgrades first. Generic upgrades will not be very common after this.",
+    cost: new Decimal(15000000),
+ effect() {
+        return player[this.layer].points.add(1).pow(.3)
+    },
+    effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" },
+},     
+
+
 
 
 layerShown(){return true}
