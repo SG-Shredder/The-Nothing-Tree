@@ -90,7 +90,7 @@ addLayer("p", {
     description: "I got a little stuck on milestone so I decided to do upgrades first. Generic upgrades will not be very common after this.",
     cost: new Decimal(1500000),
  effect() {
-        return player[this.layer].points.add(1).pow(.2)
+        return player[this.layer].points.add(1).pow(.3)
     },
     effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" },
 },     
@@ -102,7 +102,20 @@ effect() {
         return player[this.layer].points.add(1).pow(.5)
     },
     effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" },
+},
 
+    22:{
+    title: "Nuclear Inflator uhhhhh",
+    description: "So why???????",
+    cost: new Decimal(1e100),
+effect() {
+        return player[this.layer].points.add(1).pow(.6)
+    },
+    effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" },
+
+effect() {
+        return player.points.add(1).pow(0.55)
+    },
 
 
 },
