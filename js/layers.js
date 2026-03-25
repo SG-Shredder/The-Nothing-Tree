@@ -88,7 +88,7 @@ addLayer("p", {
 19:{
     title: "Generic based on boost 1",
     description: "I got a little stuck on milestone so I decided to do upgrades first. Generic upgrades will not be very common after this.",
-    cost: new Decimal(15000000),
+    cost: new Decimal(1500000),
  effect() {
         return player[this.layer].points.add(1).pow(.3)
     },
